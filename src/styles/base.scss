@@ -1,0 +1,14 @@
+@import './mixins.scss';
+
+.App {
+    @include flex-display-column;
+}
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+}

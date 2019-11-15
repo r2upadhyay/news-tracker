@@ -1,0 +1,32 @@
+@mixin tablet-size {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin larger-tablet-size {
+  @media (min-width: 1024px) and (max-width: 1439px){
+    @content;
+  }
+}
+@mixin desktop-size {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+@mixin larger-desktop-size {
+  @media (min-width: 2560px) {
+    @content;
+  }
+}
+
+// Display & Images Styles
+@mixin flex-display-column {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+@mixin flex-display-row {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+}
