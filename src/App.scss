@@ -13,29 +13,24 @@ textarea, input[type=text]{
   }
 }
 
-@include sm {
-
-  .h1 {
-    font-size: 36px;
-    line-height: 44px;
-    margin: 0px;
-  }
-
   .container {
-    max-width: 1072px;
-    margin: auto;
-    padding: 0px 16px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-}
 
-@include md {
-  .container {
-    padding: 0px 24px;
-  }
-}
+    @include sm {
+      margin: auto;
+      padding: 0px 16px;
+      width: 100%;
+      box-sizing: border-box;
+    }
 
-@include lg {
+    @include md {
+      .container {
+        padding: 0px 24px;
+      }
+    }
 
+    @include lg {
+      .container {
+        padding: 0px 24px;
+      }
+    }
 }
