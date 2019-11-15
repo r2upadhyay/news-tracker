@@ -27,7 +27,7 @@ class Main extends React.Component {
     getId = () => {
         Axios.get(`${this.newStoriesUrl}`)
             .then(response => {
-                const articleIds = response.data.slice(0, 100);
+                const articleIds = response.data.slice(0, 50);
                 const axiosRequests = articleIds.map(id => {
                     return this.getStory(id);
                 });

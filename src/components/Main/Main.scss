@@ -17,7 +17,7 @@
     margin: 0 180px;
     @include flex-display-row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
   }
 
   &__card {
@@ -45,7 +45,8 @@
 
 
     &-category {
-      background-color: #f9aa33;
+      background-color: #ED2024;
+      color:white;
       padding: 10px 30px;
       border-radius: 8px;
       align-self: flex-start;
