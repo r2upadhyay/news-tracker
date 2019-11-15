@@ -1,0 +1,30 @@
+@import "../../styles/base.scss";
+
+.header {
+  @include flex-display-row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #757575;
+margin: 0 16px;
+
+@include tablet-size {
+  margin: 0 24px;
+}
+
+@include desktop-size {
+  margin: 0 180px;
+}
+
+}
+.header-content__logo {
+  padding-top: 25px;
+  width: 50px;
+
+  @include tablet-size {
+    padding-top: 25px;
+    width: 70px;
+  }
+}
+.text {
+
+}
