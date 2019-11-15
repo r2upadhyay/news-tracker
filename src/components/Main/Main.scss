@@ -25,10 +25,13 @@
     margin: 25px 0;
     padding: 20px;
     text-align: left;
+    box-shadow: 0 10px 6px -6px #f9aa33;
+    min-height: 300px;
 
     &:nth-child(odd) {
         box-shadow: 0 10px 6px -6px #afafaf;
       }
+      
 
     @include tablet-size {
       min-height: 350px;
@@ -92,15 +95,25 @@
     }
 
     &-details {
-      @include flex-display-row;
-      justify-content: space-between;
+      @include flex-display-column;
+
+      @include tablet-size {
+        @include flex-display-row;
+        justify-content: space-between;
+      }
 
       &-author {
-        align-self: flex-end;
+
+        @include tablet-size {
+          align-self: flex-end;
+        }
       }
 
       &-time {
-        align-self: flex-end;
+        padding-top: 15px;
+        @include tablet-size {
+          align-self: flex-end;
+        }
       }
     }
   }
