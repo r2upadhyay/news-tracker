@@ -9,14 +9,24 @@ class Main extends React.Component {
     }
 
     baseUrl = 'https://hacker-news.firebaseio.com/v0';
-    newStoriesUrl = `${this.baseUrl}/newstories.json`;
+    newStoriesUrl = `${this.baseUrl}/topstories.json`;
     storyUrl = `${this.baseUrl}/item`;
+
+    //to convert the timestamp to actual date
+    getTheDate(dataObj) {
+        var dateObj = new Date();
+        var month = dateObj.getUTCMonth() + 1; //months from 1-12
+        var day = dateObj.getUTCDate();
+        var year = dateObj.getUTCFullYear();
+        var newdate;
+        return newdate = year + "/" + month + "/" + day;
+    }
 
     getId = () => {
         Axios.get(`${this.newStoriesUrl}`)
             .then(response => {
+                const arrayLength = response.data.length;
                 const articleIds = response.data.slice(0, 10);
-
                 const axiosRequests = articleIds.map(id => {
                     return this.getStory(id);
                 });
@@ -38,22 +48,22 @@ class Main extends React.Component {
     }
 
     render() {
-        console.log(this.state);
-
         return (
             <section className="main">
                 {this.state.story.map((story) => {
-                    return(
+                    return (
                         <article className="main__card">
-                            <span className="main__card-category">Music</span>
+                            <span className="main__card-category">{story.data.type}</span>
                             <h2 className="main__card-title">{story.data.title}</h2>
-                            <p className="main__card-description">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero </p>
-                            <span className="main__card-author">By {story.data.by}</span>
-                            <span className="main__card-time"><Moment format="YYYY/MM/DD">{story.data.time}</Moment></span>
+                            <p className="main__card-description">{story.data.text}The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero </p>
+                            <div className="main__card-details">
+                                <span className="main__card-details-author">By: {story.data.by}</span>
+                                <span className="main__card-details-time">{this.getTheDate(story.data.time)}</span>
+                            </div>
                         </article>
                     )
                 })
-            }
+                }
             </section>
         );
     }

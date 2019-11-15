@@ -7,9 +7,10 @@
     &__card {
         width: 80%;
         margin: 25px 0;
-        padding: 20pxq;
+        padding: 20px;
         box-shadow: 0 10px 6px -6px #afafaf;
         text-align: left;
+        border-bottom: 1px solid black;
 
         &-category {
             background-color: #F9AA33;
@@ -29,6 +30,19 @@
         &-description {
             font-size: 14px;
             line-height: 22px;
+        }
+
+        &-details {
+            @include flex-display-row;
+            justify-content: space-between;
+
+            &-author {
+                align-self: flex-end;
+            }
+    
+            &-time {
+                align-self: flex-end;
+            }
         }
     }
 }
