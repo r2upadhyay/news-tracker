@@ -1,0 +1,41 @@
+@import "styles/break-points.scss";
+
+html, body {
+  margin:0px;
+  padding:0px;
+  width:100%;
+  line-height: 25px;
+}
+
+textarea, input[type=text]{
+  font-size: 15px;
+  &:focus {
+  }
+}
+
+@include sm {
+
+  .h1 {
+    font-size: 36px;
+    line-height: 44px;
+    margin: 0px;
+  }
+
+  .container {
+    max-width: 1072px;
+    margin: auto;
+    padding: 0px 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@include md {
+  .container {
+    padding: 0px 24px;
+  }
+}
+
+@include lg {
+
+}

@@ -1,0 +1,35 @@
+@import "../../App.scss";
+
+.button {
+  height: 48px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 15px;
+  box-sizing: border-box;
+  background-position: 10px center;
+  padding-left: 15px;
+
+  @include md {
+    margin: 0 10px;
+  }
+
+  @include lg {
+  }
+}
+
+.header__details {
+
+    @include sm {
+    }
+    
+    @include md {
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    @include lg {
+        display: flex;
+        justify-content: flex-start;
+    }
+}

@@ -1,0 +1,48 @@
+@import "../../App.scss";
+
+@include sm {
+  .header {
+    padding: 16px 0px;
+    width: 100%;
+    display: block;
+  }
+
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-name {
+  }
+
+  .header__details {
+    width: 100%;
+  }
+
+  .header__details--serach {
+    padding: 4px 0px;
+  }
+
+  .header__details--button {
+    display: flex;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 224px;
+    }
+}
+
+@include md {
+  .header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+@include lg {
+
+}
+}
