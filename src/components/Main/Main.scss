@@ -1,48 +1,106 @@
-@import '../../styles/base.scss';
+@import "../../styles/base.scss";
 
 .main {
-    @include flex-display-column;
-    align-items: center;
+  @include flex-display-column;
+  align-items: center;
+  font-size: 13px;
+  line-height: 18px;
 
-    &__card {
-        width: 80%;
-        margin: 25px 0;
-        padding: 20px;
+  @include tablet-size {
+    margin: 0 24px;
+    @include flex-display-row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  @include desktop-size {
+    margin: 0 180px;
+    @include flex-display-row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  &__card {
+    width: 80%;
+    margin: 25px 0;
+    padding: 20px;
+    text-align: left;
+
+    &:nth-child(odd) {
         box-shadow: 0 10px 6px -6px #afafaf;
-        text-align: left;
-        border-bottom: 1px solid black;
+      }
 
-        &-category {
-            background-color: #F9AA33;
-            padding: 5px 12px;
-            border-radius: 8px;
-            align-self: flex-start;;
-        }
+    @include tablet-size {
+      min-height: 350px;
+      width: 40%;
 
-        &-title {
-            text-transform: uppercase;
-            font-size: 20px;
-            line-height: 32px;
-            margin: 0;
-            margin-top: 25px;
-        }
-
-        &-description {
-            font-size: 14px;
-            line-height: 22px;
-        }
-
-        &-details {
-            @include flex-display-row;
-            justify-content: space-between;
-
-            &-author {
-                align-self: flex-end;
-            }
-    
-            &-time {
-                align-self: flex-end;
-            }
-        }
+      &:nth-child(even) {
+        box-shadow: 0 10px 6px -6px #f9aa33;
+      }
     }
+    @include desktop-size {
+      height: 350px;
+      width: 30%;
+    }
+
+
+    &-category {
+      background-color: #f9aa33;
+      padding: 10px 30px;
+      border-radius: 8px;
+      align-self: flex-start;
+
+      @include desktop-size {
+        padding: 15px 25px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+
+    &-title {
+      text-transform: uppercase;
+      font-size: 18px;
+      line-height: 25px;
+      margin: 0;
+      margin-top: 25px;
+
+      @include tablet-size {
+        font-size: 20px;
+        line-height: 32px;
+      }
+      @include desktop-size {
+        margin-top: 45px;
+      }
+    }
+
+    &-a {
+      font-size: 14px;
+      line-height: 22px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: #b67c26;
+
+      &.pointer {
+        cursor: pointer;
+      }
+    }
+
+    &-details {
+      @include flex-display-row;
+      justify-content: space-between;
+
+      &-author {
+        align-self: flex-end;
+      }
+
+      &-time {
+        align-self: flex-end;
+      }
+    }
+  }
 }
